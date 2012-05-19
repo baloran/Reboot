@@ -1,0 +1,61 @@
+body{
+	background:#333;
+	font-family:verdana;
+}
+body, form a{
+	color:white;
+}
+.Title{
+	width:440px;
+	margin:0 auto;
+	margin-top:25%;
+	font-weight:bold;
+	text-align:center;
+	padding:10px;
+}
+form{
+	display:block;
+	width:400px;
+	border:1px solid black;
+	padding:20px;
+	margin:0 auto;
+	background-color:rgba(255,255,255,0.2);
+}
+form input[type=text], form input[type=password]{
+	padding:5px;
+	width:170px;
+	height:30px;
+}
+input:placeholder{
+	color:black;
+}
+form input[type=password]{
+	margin-left:5px;
+}
+form input[type=submit]{
+	width:30px;
+	height:30px;
+	margin-left:10px;
+}
+.Case{
+	display:inline-block;
+}
+#Plus .Case{
+	width:45%;
+	padding:10px 10px 0;
+	font-size:12px;
+}
+label{
+	vertical-align:bottom;
+	line-height:20px;
+}
+
+
+input::-webkit-input-placeholder{
+	color:black;
+	font-weight:bold;
+}
+input:-moz-placeholder{
+	color:black;
+	font-weight:bold;
+}

@@ -1,0 +1,21 @@
+###ErrorDocument 404 http://opworldlab.com/noway.html
+Options +FollowSymlinks
+RewriteEngine on
+
+### HOME
+RewriteRule ^(|index.php)$          										view/ [L]
+RewriteRule ^(white_rabbit)$          										view/identification [L]
+RewriteRule ^(play)$          												view/home [L]
+
+### INCLUDE
+RewriteRule ^(js|css|img)/([\w\._-]+)$                                      include/$1/$2 [L]
+RewriteRule ^(js|css|img)/([\w_-]+)/([\w\._-]+)$                            include/$1/$2/$3 [L]
+RewriteRule ^css/([\w_-]+)/images/([\w\._-]+)$                              include/img/$1/$2 [L]
+
+### ERROR
+RewriteRule ^noway$                                                         error/404.php [L]
+RewriteRule ^update$                                                        error/update.php [L]
+
+### CONTROLLER
+### USER
+RewriteRule ^(identification|guest|deconnection|subscription|forgotten)$    controller/php/user.php?action=$1 [L]

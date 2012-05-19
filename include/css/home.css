@@ -1,0 +1,23 @@
+.Row{
+	
+}
+
+.Case{
+	padding:5px;
+}
+
+
+.hFilet, .vFilet{
+	border:1px solid black;
+}
+
+.hFilet{
+	display:block;
+	height:1px;
+	border-bottom:0px;
+}
+.vFilet{
+	display:inline-block;
+	width:1px;
+	border-right:0px;
+}
