@@ -11,7 +11,7 @@
 		if(!is_set($_POST, 'val1') || !is_set($_POST, 'val2')) Manager::toBack();
 	}
 	elseif($action == 'update' || $action == 'unsubscribe'){
-	    if(!_VAR::$USER->isConnected) Manager::toExit();
+	    if(!Manager::$USER->isConnected) Manager::toExit();
 	}
 
 	switch($action){
@@ -21,8 +21,8 @@
 		case 'identification':
             $cookie = is_set($_POST, 'cookie') && $_POST['cookie'] ? true : false;
 
-            if(!_VAR::$USER->isConnected){
-                $Verification = _VAR::$USER->identification(trim($_POST['val1']), trim($_POST['val2']), $cookie);
+            if(!Manager::$USER->isConnected){
+                $Verification = Manager::$USER->identification(trim($_POST['val1']), trim($_POST['val2']), $cookie);
               
                 if($Verification != 'OK'){
                      $_SESSION['ERR'] = $Verification;
@@ -49,7 +49,7 @@
 		    else{
 		    	unset($_SESSION['pseudo']);
 	        	unset($_SESSION['email']);
-	            $retour = _VAR::$USER->subscription($params);
+	            $retour = Manager::$USER->subscription($params);
 
 	            if($retour == 'OK'){
 	            	
@@ -63,7 +63,7 @@
 	    /************************************/
 	    case 'unsubscribe': 
 	    	if(is_set($_POST, 'verification') && $_POST['verification']){
-	    		$retour = _VAR::$USER->unsubscribe();
+	    		$retour = Manager::$USER->unsubscribe();
 	    		
 	    		if($retour !== 'OK') $_SESSION['ERR'] = $retour;
 	    	}
