@@ -19,12 +19,13 @@ Mise en place dans le dossier web "WWW"
 
 Structure du framework
 
-	- auth
+	- auth				// Fichier de paramétrage de l'authentification à la base de donnée, le nom du fichier est le dossier home du projet avec des "_" au lieu des "/"
+						// Ce qui donne pour l'url "http://localhost/reboot" => "localhost_reboot.php"
 
-	- functions
+	- functions			// Différentes fonctions utilisé par le framework
 
 	- classes			// Les classes qui comment par un "_" sont succeptible d'avoir une fille dans le model des projets
-						// Les classes sont les seuls fichiers qui comment par une majuscule
+						// Les classes sont les seuls fichiers qui commence par une majuscule
 		- _Empty.php			// classe exemple
 		- _User.php				// Gestion des utilisateurs
 		- Manager.php			// Gestion de projet
@@ -32,7 +33,7 @@ Structure du framework
 
 Structure de projet
 
-	- controller		// CONTROLLEURS, fichiers qui seront appelé depuis les vues, utilise les classes des models et peux retourne un résultat
+	- controller		// CONTROLLEURS : fichiers qui seront appelé depuis les vues, utilise les classes des models et peux retourne un résultat
 		- js
 		- php
 			- empty.php 		// controleur exemple
@@ -51,6 +52,6 @@ Structure de projet
 		- php
 		- js
 
-	- view				// VUES, affiche le site
+	- view				// VUES : affiche le site
 
 	- .htaccess			// Masque la structure du projet et améliore les urls
