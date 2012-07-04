@@ -7,7 +7,7 @@
     <form id="Connexion" class="" method="post" ACTION="identification" ENCTYPE="application/x-www-form-urlencoded"> 
 		<input type="text" name="pseudo" style="display:none;" />    
      
-    	<div><input placeholder="Identifiant" type="text" name="val1" pattern="<?=User::$Pattern['pseudo']?>" required/></div>
+    	<div><input placeholder="Identifiant" type="text" name="val1" pattern="<?php echo User::$Pattern['pseudo'];?>" required/></div>
     	<div><input placeholder="Mot de passe" type="password" name="val2" required/></div>
     	<div class="Row" id="FormPlus">
             <input class="Case" value="" type="submit"/>

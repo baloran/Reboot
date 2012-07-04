@@ -11,8 +11,8 @@
 				<div class="Case" id="Avatar"></div>
 				<iv class="Case">
 					<input type="text" name="pseudo" style="display:none;" /> 
-			    	<div><input placeholder="Identifiant" type="text" name="val1" pattern="<?=User::$Pattern['pseudo']?>" required/></div>
-			    	<div><input placeholder="E-mail" type="text" name="val2" pattern="<?=User::$Pattern['email']?>" required/></div>
+			    	<div><input placeholder="Identifiant" type="text" name="val1" pattern="<?php echo User::$Pattern['pseudo'];?>" required/></div>
+			    	<div><input placeholder="E-mail" type="text" name="val2" pattern="<?php echo User::$Pattern['email'];?>" required/></div>
 			    </div>
 			</form>
 		</div>
