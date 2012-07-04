@@ -17,6 +17,6 @@
 			</form>
 		</div>
 	</form>
-<?
+<?php
     include_once 'include/php/footer.php';
 ?>  

@@ -91,6 +91,6 @@
 
 </div>
 
-<?
+<?php
     include_once 'include/php/footer.php';
 ?>  

@@ -4,6 +4,6 @@
     include_once 'include/php/header.php';
 ?>
 	<a href="deconnection">D&eacute;connexion</a>
-<?
+<?php
     include_once 'include/php/footer.php';
 ?>  
