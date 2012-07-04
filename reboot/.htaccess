@@ -20,5 +20,5 @@ RewriteRule ^(identification|guest|deconnection|subscription|forgotten)$    cont
 ### JSON
 
 ### VIEW
-RewriteRule ^white_rabbit$   												view/identification [L]
-RewriteRule ^red_pill$   													view/subscription [L]
+RewriteRule ^white_rabbit$   												view/identification.php [L]
+RewriteRule ^red_pill$   													view/subscription.php [L]
