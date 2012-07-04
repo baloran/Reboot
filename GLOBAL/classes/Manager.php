@@ -254,7 +254,7 @@ class Manager{
         $ERROR['trace'] = self::setTrace();
         
         if(self::$OBJECT && !self::$OBJECT->isOk){
-            $ERROR['url']       = self::getUrl();
+            $ERROR['url']       = self::getCurrentUrl();
             $ERROR['request']   = self::$QUERY;
             $ERROR['class']     = self::$OBJECT->className;
         }
