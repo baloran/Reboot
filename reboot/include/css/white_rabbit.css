@@ -1,0 +1,70 @@
+body{
+	background:#DDD url(../img/identification.png) top center no-repeat;
+	font-family:verdana;
+}
+body, form a{
+	color:black;
+}
+form{
+	margin-top:230px;
+	width:200px;
+	display:block;
+	margin:323px auto 0;
+	/*background-color:rgba(255,255,255,0.2);*/
+}
+form input[type=text], form input[type=password]{
+	padding:5px;
+	width:175px;
+	height:30px;
+	font-weight:bold;
+	margin-left:10px;
+}
+form input[type=password]{
+	margin-top:10px;
+}
+form input[type=submit]{
+	width:56px;
+	height:54px;
+	border:0px;
+	background:transparent url(../img/key_grey.png) no-repeat;
+	margin-top:5px;
+	cursor:pointer;
+}
+form input[type=submit]:hover{
+	background:transparent url(../img/key_blue.png) no-repeat;
+}
+#FormPlus{
+	font-size:11px;
+}
+.Case{
+	display:inline-block;
+	vertical-align:top;
+}
+label{
+	vertical-align:bottom;
+	line-height:20px;
+}
+
+
+
+input[type=text], input[type=number], input[type=text], input[type=password], input[type=email], textarea, select{
+    color:black;
+    border:1px solid #f26c0d;
+    background-color:#FFF;
+    vertical-align:middle;
+}
+input[type=text], input[type=number], input[type=text], input[type=password], input[type=email], textarea{
+    box-shadow: 0px 0px 3px #555 inset; 
+}
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, textarea:focus{
+    box-shadow: 0px 0px 5px #000; 
+    background-color:white;
+}
+input::-webkit-input-placeholder{
+	color:#555;
+	font-weight:bold;
+}
+input:-moz-placeholder{
+	color:#555;
+	font-weight:bold;
+}

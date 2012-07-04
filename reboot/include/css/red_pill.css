@@ -1,0 +1,67 @@
+
+body, #Body, #Page{
+	background-color:white;
+}
+
+#Page form{
+	width:800px;
+	margin:0px auto;
+}
+.hand{
+	width:200px;
+	margin-top:200px;
+}
+.card{
+	display:block;
+	width:600px;
+}
+.hand.left{
+	float:left;
+}
+.hand.right{
+	float:right;
+	margin-right:20px;
+}
+
+#colonne{
+	padding:20px 0;
+}
+#colonne #card{
+	background:transparent url(../img/card.png) center no-repeat;
+	width:600px;
+	height:199px;
+	padding:220px 100px 0;
+}
+#subscription{
+	/*border:1px solid black;*/
+	width:300px;
+	height:150px;
+	margin:0 auto 0 auto;
+
+	-moz-transform:rotate(1.5deg);
+	-webkit-transform:rotate(1.5deg);
+	-o-transform:rotate(1.5deg);
+}
+
+
+#Page form input[type=text], form input[type=password]{
+	padding:5px;
+	width:160px;
+	height:30px;
+	font-weight:bold;
+	margin:10px 0 10px 10px;
+	background-color:transparent;
+}
+
+#Avatar{
+	width:80px;
+	height:100px;
+	border:1px solid black;
+	margin:10px;
+}
+
+input[type=submit]{
+	background:url(../img/pillule_gauche_rouge.png) top left no-repeat;
+	background-size:200px 160px;
+	height:160px;
+}

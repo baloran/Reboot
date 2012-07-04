@@ -1,0 +1,10 @@
+*{
+	padding:0;
+	margin:0;
+}
+
+#log {
+	-webkit-transition: top 0.2s ease-in-out;
+	-moz-transition: top 0.2s ease-in-out;
+	-o-transition: top 0.2s ease-in-out;
+}

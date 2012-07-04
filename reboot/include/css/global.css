@@ -1,0 +1,60 @@
+* {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+html, body {height: 100%;width:100%;min-width:1200px;}
+#Body{
+    min-width:1200px;
+    min-height:100%;
+    height: auto !important;
+    height: 100%;
+    font-family:verdana;
+    font-size:12px;
+}
+
+#Page{width:1200px;margin:0 auto;}
+#Body{margin: 0 auto -50px;}
+#Footer, #push{height:50px;}
+#Header{height:150px;}
+#Page{min-height:500px;}
+
+
+.Row{
+    display:block;
+}
+.Row .Case{
+    display:inline-block;
+    vertical-align:middle;
+}
+
+
+
+
+
+input[type=text], input[type=number], input[type=text], input[type=password], input[type=email], textarea, select{
+    color:black;
+    border:1px solid #f26c0d;
+    background-color:#FFF;
+    vertical-align:middle;
+}
+input[type=text], input[type=number], input[type=text], input[type=password], input[type=email], textarea{
+    box-shadow: 0px 0px 3px #555 inset; 
+}
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, textarea:focus{
+    box-shadow: 0px 0px 5px #000; 
+    background-color:white;
+}
+input::-webkit-input-placeholder{
+    color:#555;
+    font-weight:bold;
+}
+input:-moz-placeholder{
+    color:#555;
+    font-weight:bold;
+}

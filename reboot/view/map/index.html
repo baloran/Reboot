@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Reboot</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<!--[if lt IE 9]><script type="text/javascript" src="js/excanvas.compiled.js"></script><![endif]-->
+		<script type="text/javascript" src="js/json2.js"></script>
+		<script type="text/javascript" src="js/oXHR.js"></script>
+		<script type="text/javascript" src="js/classes/Tileset.js"></script>
+		<script type="text/javascript" src="js/classes/Map.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</head>
+	<body>
+		<canvas id="canvas" width="600" height="600"></canvas>
+		<script> /*
+		
+		window.requestAnimFrame = (function(){
+    return window.requestAnimationFrame       || // La forme standardisée
+           window.webkitRequestAnimationFrame || // Pour Chrome et Safari
+           window.mozRequestAnimationFrame    || // Pour Firefox
+           window.oRequestAnimationFrame      || // Pour Opera
+           window.msRequestAnimationFrame     || // Pour Internet Explorer
+           function(callback){                   // Pour les élèves du dernier rang
+               window.setTimeout(callback, 1000 / 60);
+           };
+})();
+		
+		var tile = { h: 278,
+				 l: 476.5,
+				 hdest: 60,
+				 ldest: 120};
+var map = new Map("premiere", tile);
+
+
+var left=false;
+var right=false;
+var up=false;
+var down=false;
+
+document.onkeydown = function(event) {
+     var key_pressed; 
+     if(event == null){
+          key_pressed = window.event.keyCode; 
+     }
+     else {
+          key_pressed = event.keyCode; 
+     }
+     switch(key_pressed){
+          case 37:
+               left=true;
+               break; 
+          case 38:
+               up=true;
+               break; 
+          case 39:
+               right=true;
+               break;
+          case 40:
+               down=true;
+               break; 
+     } 
+}
+ 
+document.onkeyup = function(event) {
+     var key_pressed; 
+     if(event == null){
+          key_pressed = window.event.keyCode; 
+     }
+     else {
+          key_pressed = event.keyCode; 
+     }
+     switch(key_pressed){
+          case 37:
+               left=false;
+               break; 
+          case 38:
+               up=false;
+               break; 
+          case 39:
+               right=false;
+               break;
+          case 40:
+               down=false;
+               break; 
+     } 
+}
+
+window.onload = function() {
+function game(){
+var scroll = {x: 0,
+              y: 240};
+
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext('2d');	
+	
+	canvas.width  = 800;
+	canvas.height = 600;
+	
+	var key_pressed; 
+     if(event == null){
+          key_pressed = window.event.keyCode; 
+     }
+     else {
+          key_pressed = event.keyCode; 
+     }
+     switch(key_pressed){
+          case 37:
+               scroll.x--;
+               break; 
+          case 38:
+               scroll.x++;
+               break; 
+          case 39:
+               scroll.y--;
+               break;
+          case 40:
+               scroll.y++;
+               break; 
+     } 
+	
+	map.dessinerMap(ctx, tile, scroll);
+	window.requestAnimFrame(function(){game()});}
+	game();
+}*/
+</script>
+	</body>
+</html>
