@@ -20,5 +20,10 @@ RewriteRule ^(identification|guest|deconnection|subscription|forgotten)$    cont
 ### JSON
 
 ### VIEW
+<<<<<<< HEAD
+RewriteRule ^white_rabbit$ view/identification.php [L]
+RewriteRule ^red_pill$ view/subscription.php [L]
+=======
 RewriteRule ^white_rabbit$   												view/identification.php [L]
 RewriteRule ^red_pill$   													view/subscription.php [L]
+>>>>>>> origin/master

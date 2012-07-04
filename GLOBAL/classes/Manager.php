@@ -48,6 +48,10 @@ class Manager{
         Manager::$Connexion = $connexions;
     }
 
+    public static function getStatut(){
+  return self::$statut;
+  }
+
     // Créer l'objet PDO
     public static function getEngine($db){
         return new PDO(
@@ -114,7 +118,7 @@ class Manager{
         }
         elseif($_SERVER['SERVER_ADDR'] == '127.0.0.1'){
             self::$SERVER = 'LOCALHOST';
-            self::$URI = 'D:/CloudStation/Programmes/UwAmp/www/';
+            self::$URI = 'C:/wamp/www/openworldlab/reboot/';
             self::$DN = 'localhost';
         }
         elseif($_SERVER['SERVER_ADDR'] == '176.31.156.90'){
