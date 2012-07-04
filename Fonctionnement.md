@@ -16,6 +16,11 @@ Mise en place dans le dossier web "WWW"
 		- soit dans un sous dossier de celui-ci (dossier "reboot" dans le dossier "opworldlab.com" => url : "reboot.opworldlab.com" ou "opworldlab.com/reboot")
 		- soit pour la configuration localhost dans un dossier directement (dossier "reboot" => url : "localhost/reboot")
 
+	- Dans le fichier /GLOBAL/classes/Manager.php, dans la fonction "initInclude", il va falloir modifier les chemins selon la configuration que vous utilisez (Local ou sur un serveur)
+	  Modifier cette ligne "self::$URI = 'URL DE VOTRE DOSSIER WWW';" avec par exemple "C:/wamp/www" comme URL
+
+	- Modifier en suite /GLOBAL/auth/localhost_reboot.php (dans le cas d'une utilisation local) avec les paramètres de connexion de votre base de donnée
+
 
 Structure du framework
 
