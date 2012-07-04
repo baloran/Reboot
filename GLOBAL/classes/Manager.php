@@ -56,6 +56,10 @@ class Manager{
             self::$Connexion[$db]['password']);
     }
 
+    public static function getStatut(){
+        return self::$statut;
+    }
+
     // 
     public static function start(){
         self::initIncludePath();
