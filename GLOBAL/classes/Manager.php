@@ -161,6 +161,7 @@ class Manager{
     // Initalise le language
     public static function initLanguage(){
         setlocale(LC_CTYPE,"fr_FR.ISO-8859-1");
+        date_default_timezone_set('Europe/Paris');
         
         if(isset($_GET['lng']) && in_array($_GET['lng'],Root::$Language)){
             self::$CLNG = $_GET['lng'];
@@ -269,17 +270,18 @@ class Manager{
     // Envoie rapport d'erreur
     public static function sendThrow($ERROR, $type){
         $Log = new Log();
-        $Log->sendError($ERROR, $type); 
         
         if(self::$debug){
             echo 'ERREUR_______'.$type.'_____________'.PHP_EOL;
             echo '<pre>';
             print_r($ERROR);
+
             exit;
         }
         else{
-            //$_SESSION['ERR'] = 'ERROR';
-            //self::toBack();
+            $Log->sendError($ERROR, $type); 
+            $_SESSION['ERR'] = 'ERROR';
+            self::toBack();
         }
     }
 
@@ -322,7 +324,7 @@ class Manager{
     
     // Retour arrière
     public static function toBack($gotohome = false){
-        if(!isset($_SERVER['HTTP_REFERER']) || $gotohome) $_SERVER['HTTP_REFERER'] = self::$CURL;
+        if(!isset($_SERVER['HTTP_REFERER']) || $gotohome) $_SERVER['HTTP_REFERER'] = getCurrentPage();
         header('Location: '.$_SERVER['HTTP_REFERER']);
         exit;
     }

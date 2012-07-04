@@ -39,14 +39,14 @@ class Root extends Manager{
         include 'include/php/builder.php';
 
         if(getCurrentPage() != build_url('white_rabbit')){
-            Manager::$INCLUDE['css'][0]    = 'css/global';
-            Manager::$INCLUDE['css'][1]    = 'css/theme';
+            Manager::$INCLUDE['css'][0]    = 'css/global.css';
+            Manager::$INCLUDE['css'][1]    = 'css/theme.css';
         }
         else{
             //Manager::$MENU['header'] = array();
         }
 
-        
+        //Manager::testEnvironnement();
     }
 }
 Root::init();

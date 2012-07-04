@@ -86,7 +86,7 @@ class _User extends Object{
      * @return string 
      */
     public function identification($pseudo, $password, $cookie = false){
-        setcookie('hash','',0,'/','.'._VAR::$ROOT->NDD);
+        setcookie('hash','',0,'/','.'.Manager::$DN);
         $return         = 'ERROR_USER_IDENTIFICATION'; //@ERROR_CODE
      
         // Verification de l'utilisateur
@@ -216,7 +216,7 @@ class _User extends Object{
             elseif($row->user_statut == 1 && ($action == 'identification' || $action == 'session')){
                 $return = 'USER_INACTIVE'; //@ERROR_CODE
             }
-            elseif(_VAR::$ROOT->getStatut() == 3 && $row->user_statut < 3){
+            elseif(Manager::getStatut() == 3 && $row->user_statut < 3){
                 return 'SERVICE_DESAC'; //@ERROR_CODE
             }
             else{
@@ -284,7 +284,7 @@ class _User extends Object{
         
         if($return == 'OK') $return = ''; //@ERROR_CODE
         elseif($return == 'USER_BLOCK'){ //@ERROR_CODE
-            _VAR::$ROOT->toExit();
+            Manager::toExit();
         }
 
         return $return;
@@ -325,7 +325,7 @@ class _User extends Object{
         if($sqlUpdate && $sqlUpdate['nombre'] > 0){
             $_SESSION['hash'] = $user_hash;
             if($cookie){
-                setcookie('hash',$user_hash,time()+3600*24*31,'/','.'._VAR::$ROOT->NDD);
+                setcookie('hash',$user_hash,time()+3600*24*31,'/','.'.Manager::$DN);
             }
         }
     }
@@ -356,7 +356,7 @@ class _User extends Object{
      * @param string $pseudo 
      */
     public function subscription($params){
-        if(_VAR::$ROOT->getStatut() != 1)   return 'SUBSCRIPTION_DESAC'; //@ERROR_CODE
+        if(Manager::getStatut() != 1)   return 'SUBSCRIPTION_DESAC'; //@ERROR_CODE
         if($this->isConnected)              return 'USER_CONNECTED'; //@ERROR_CODE
 
         $return = $this->verification('exist', $params);

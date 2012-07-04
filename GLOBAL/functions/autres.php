@@ -20,14 +20,14 @@ function error_handler($errno, $errstr, $errfile, $errline, $errcontext)
     
     $errfile = Manager::getFile($errfile);
     
-    //$ERROR = _VAR::$ROOT->initThrow();
+    $ERROR = Manager::initThrow();
     $ERROR['str'] = $errstr;
     $ERROR['file'] = $errfile;
     $ERROR['line'] = $errline;
     if(count($errcontext) > 0) $ERROR['context'] = $errcontext;
     echo '<pre>';print_r($ERROR);
     
-    //_VAR::$ROOT->sendThrow($ERROR, 'PHP');
+    Manager::sendThrow($ERROR, 'PHP');
 }
 
 

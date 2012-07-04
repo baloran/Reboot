@@ -1,6 +1,6 @@
 <?php
-    include_once $_SERVER['DOCUMENT_ROOT'].'/model/php/Root.php';
-    _VAR::$ROOT->inGame = false;
+    include_once '../model/php/Root.php';
+    Root::$inGame = false;
     include_once 'include/php/header.php';
 ?>
 	<form class="" method="post" ACTION="subscription" ENCTYPE="application/x-www-form-urlencoded" id="colonne">

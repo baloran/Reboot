@@ -5,12 +5,12 @@ function getCurrentUrl(){
 }
 
 function getCurrentPage(){
-    return '';
+    return 'http://'.Manager::$HOME.Manager::$CMENU;
 }
 
 function build_url($uri = ''){
 	if(substr($uri, 0, 7) != 'http://')
-		$uri = Manager::$HOME.$uri;
+		$uri = 'http://'.Manager::$HOME.$uri;
 	return $uri;
 }
 
@@ -33,10 +33,10 @@ function build_head(){
 
 	if(Manager::$isMobile){
 		$strHead[] = '<meta name="viewport" content="width=device-width, user-scalable=no" />';
-		Manager::$INCLUDE['css'][] = 'css/mobile/'.$page;
+		if(file_exists(get_include_path()."/include/css/mobile/$page.css")) Manager::$INCLUDE['css'][] = 'css/mobile/'.$page.'.css';
 	}
-	else{
-		Manager::$INCLUDE['css'][] = 'css/'.$page;
+	elseif(file_exists(get_include_path()."/include/css/$page.css")){
+		Manager::$INCLUDE['css'][] = 'css/'.$page.'.css';
 	}
 	
 	ksort(Manager::$INCLUDE['css']);

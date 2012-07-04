@@ -1,17 +1,17 @@
 <?php
-	include_once $_SERVER['DOCUMENT_ROOT'].'/model/php/Root.php';
+	include_once '../../model/php/Root.php';
 
 	$gotohome = false;
 
 	$action = is_set($_GET, 'action') ? encode($_GET['action']) : null;
 	$id 	= is_set($_GET, 'id') && is_numeric($_GET['id']) ? encode($_GET['id']) : 0;
 	
-	if(is_set($_POST, 'pseudo')) _VAR::$ROOT->toExit();
+	if(is_set($_POST, 'pseudo')) Manager::toExit();
 	if($action == 'identification' || $action == 'subscription'){
-		if(!is_set($_POST, 'val1') || !is_set($_POST, 'val2')) _VAR::$ROOT->toBack();
+		if(!is_set($_POST, 'val1') || !is_set($_POST, 'val2')) Manager::toBack();
 	}
 	elseif($action == 'update' || $action == 'unsubscribe'){
-	    if(!_VAR::$USER->isConnected) _VAR::$ROOT->toExit();
+	    if(!_VAR::$USER->isConnected) Manager::toExit();
 	}
 
 	switch($action){
@@ -74,20 +74,20 @@
 	    /************************************/
 	    case 'deconnection':
 	        $gotohome = true;
-	        _VAR::$USER->deconnection();
+	        Manager::$USER->deconnection();
 
 	        $_SESSION['hash'] = '';
 	        session_unset();
 	        session_destroy();
-	        setcookie('hash','',0,'/','.'._VAR::$ROOT->NDD);
+	        setcookie('hash','',0,'/','.'.Manager::$DN);
 	    break;
 
 	    default:
 	    	$_SESSION['ERR'] = 'ERROR_USER_NOACTION'; //@ERROR_CODE
-	    	_VAR::$ROOT->toExit();
+	    	Manager::toExit();
 	    break;
 	}
 
 	//print_r($_SESSION);exit;
-	_VAR::$ROOT->toBack($gotohome);
+	Manager::toBack($gotohome);
 ?>

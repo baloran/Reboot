@@ -10,10 +10,10 @@ class _Log extends Object{
     {
         parent::__construct('Log');
         
-        if(isset(_VAR::$USER) && _VAR::$USER->isConnected){
-            $this->VALUES['log_user_id'] = _VAR::$USER->id;
+        if(isset(Manager::$USER) && Manager::$USER->isConnected){
+            $this->VALUES['log_user_id'] = Manager::$USER->id;
         } 
-        $this->VALUES['log_request'] = _VAR::$QUERY;
+        $this->VALUES['log_request'] = Manager::$QUERY;
         $this->VALUES['log_dateCreate'] = date("Y-m-d H:i:s");
         
         $Informations = informationsVisiteur();
@@ -27,7 +27,7 @@ class _Log extends Object{
             $resume = $error['str'];
         }
         else{
-            $file = str_replace(_VAR::$HOME.'/','',$error['file']);
+            $file = str_replace(Manager::$HOME.'/','',$error['file']);
             $resume = $error['str'].' in '.$file.' line '.$error['line'];
             unset($error['context']);
         }

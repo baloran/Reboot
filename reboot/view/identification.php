@@ -1,8 +1,8 @@
 <?php
-    include_once $_SERVER['DOCUMENT_ROOT'].'/model/php/Root.php';
+    include_once '../model/php/Root.php';
     include_once 'include/php/header.php';
 
-    if(_VAR::$USER->isConnected) header('Location:'.build_url('play'));
+    if(Manager::$USER->isConnected) header('Location:'.build_url('play'));
 ?>
     <form id="Connexion" class="" method="post" ACTION="identification" ENCTYPE="application/x-www-form-urlencoded"> 
 		<input type="text" name="pseudo" style="display:none;" />    
